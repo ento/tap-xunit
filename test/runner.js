@@ -77,7 +77,7 @@ function runBadInputTests() {
       var xUnitStream = inputStream.pipe(tapToxUnitConverter);
       var numParseErrors = 0;
       xUnitStream.on('end', function() {
-        assert.equals(tapToxUnitConverter.exitCode, 1, 'exitCode match');
+        assert.equals(tapToxUnitConverter.exitCode, 2, 'exitCode match');
         assert.end();
       });
     });

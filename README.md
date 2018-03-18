@@ -32,6 +32,12 @@ less results.tap | tap-xunit --package="MyCompany.MyTool" > results.xml
 By default TAP comments are used as test-suite names and considered to mark test boundaries. CLI flag ```--dontUseCommentsAsTestNames``` can be used to turn that feature off, in which case comments are ignored and
 all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
 
+Exit code of the CLI denotes the following:
+
+*0*: conversion was successful and there were no test failures.
+*1*: conversion was successful and there was at least one test failure.
+*2*: conversion failed because of malformed input or no TAP was found
+
 ## Library
 ```
 var converter = require('tap-xunit');
